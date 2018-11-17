@@ -2,7 +2,7 @@ def pet_shop_name(shop)
   return @pet_shop[:name]
 end
 
-def total_cash(shop)
+def total_cash(pet_shop)
   return @pet_shop[:admin][:total_cash]
 end
 
@@ -14,8 +14,8 @@ def pets_sold(pet_shop)
   return pet_shop[:admin][:pets_sold]
 end
 
-def increase_pets_sold(pet_shop, number_of_pets)
-  pet_shop[:admin][:pets_sold] = pet_shop[:admin][:pets_sold] += number_of_pets
+def increase_pets_sold(pet_shop, pet)
+  pet_shop[:admin][:pets_sold] = pet_shop[:admin][:pets_sold] += pet
 end
 
 def stock_count(pet_shop)
