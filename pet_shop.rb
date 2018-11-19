@@ -80,11 +80,12 @@ def customer_can_afford_pet(customer, pet)
 end
 
 def sell_pet_to_customer(pet_shop, pet, customer)
- if customer_can_afford_pet(customer, pet)
+  if pet == nil
+  elsif customer_can_afford_pet(customer, pet)
    add_pet_to_customer(customer, pet[:name])
    increase_pets_sold(pet_shop, 1)
    amount = pet[:price]
-   remove_customer_cash(customer, pet[:price])
-   add_or_remove_cash(pet_shop, pet[:price])
+   remove_customer_cash(customer, amount)
+   add_or_remove_cash(pet_shop, amount)
   end
 end
